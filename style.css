@@ -1,0 +1,37 @@
+.seq{float:left; width: 12%;   border: solid 1px #555; margin: 10px auto; min-height: 70px; background: #eee;}
+.topseq{float:left; width: 12%;   border: solid 1px #555; margin: 10px auto; min-height: 30px; background: #eee;}
+
+.seq .last{clear:both;  border: solid 1px #555; margin: 10px auto; min-height: 70px; background: #eee; }
+.track{width: 100%; clear :both; border: solid 1px #555; margin: 10px auto; min-height: 150px  }
+.player{width: 100%; clear:both;}
+#counter{font-size: 20px;}
+input[type="checkbox"]{ display:block;  height: 50px; }
+
+label {
+  cursor: pointer;
+   background: #eef;
+}
+
+input[type="checkbox"]:checked{background: #5f5;}
+
+input[type="checkbox"] + label:before {
+  border: 1px solid #000;
+  content: "\00a0";
+  display: inline-block;
+  font: 46px/1em sans-serif;
+  height: 46px;
+  width: 46px;
+  margin: 0 .25em 0 0;
+  padding:0;
+  vertical-align: top;
+  width: 16px;
+}
+input[type="checkbox"]:checked + label:before {
+  background: #ddd;
+  color: #666;
+  content: "\2713";
+  text-align: center;
+}
+input[type="checkbox"]:checked + label:after {
+  font-weight: bold;
+}
