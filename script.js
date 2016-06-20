@@ -200,14 +200,14 @@ window.playDrums = function(tempo){
 			'<div id="randomy"></div>'+
 			'</div>'+
 			
-			'<div class="seq seq1  last"><div class="countplace" >1</div><input ID = "snarebox1"  class="snarebox" type="checkbox"  name="snarebox1" value="1" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq2 "><div class="countplace" >2</div><input ID = "snarebox2"   class="snarebox" type="checkbox"  name="snarebox2"  value="2" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq3 "><div class="countplace" >3</div><input ID = "snarebox3"   class="snarebox" type="checkbox"  name="snarebox3" value="3" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq4 "><div class="countplace" >4</div><input ID = "snarebox4"   class="snarebox" type="checkbox"  name="snarebox4"  value="4" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq5 "><div class="countplace" >5</div><input ID = "snarebox5"   class="snarebox" type="checkbox"  name="snarebox5" value="5" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq6 "><div class="countplace" >6</div><input ID = "snarebox6"   class="snarebox" type="checkbox"  name="snarebox6"  value="6" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq7 "><div class="countplace" >7</div><input ID = "snarebox7"   class="snarebox" type="checkbox"  name="snarebox7" value="7" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq8 "><div class="countplace" >8</div><input ID = "snarebox8"   class="snarebox" type="checkbox"  name="snarebox8"  value="8" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq1  last"> <label for="snarebox1">1</label> <input ID = "snarebox1"  class="snarebox" type="checkbox"  name="snarebox1" value="1" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq2 "> <label for="snarebox2">2</label> <input ID = "snarebox2"   class="snarebox" type="checkbox"  name="snarebox2"  value="2" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq3 "> <label for="snarebox3">3</label> <input ID = "snarebox3"   class="snarebox" type="checkbox"  name="snarebox3" value="3" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq4 "> <label for="snarebox4">4</label> <input ID = "snarebox4"   class="snarebox" type="checkbox"  name="snarebox4"  value="4" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq5 "> <label for="snarebox5">5</label> <input ID = "snarebox5"   class="snarebox" type="checkbox"  name="snarebox5" value="5" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq6 "> <label for="snarebox6">6</label> <input ID = "snarebox6"   class="snarebox" type="checkbox"  name="snarebox6"  value="6" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq7 "> <label for="snarebox7">7</label> <input ID = "snarebox7"   class="snarebox" type="checkbox"  name="snarebox7" value="7" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq8 "> <label for="snarebox8">8</label> <input ID = "snarebox8"   class="snarebox" type="checkbox"  name="snarebox8"  value="8" onchange="editNow();"><div class="subdiv"></div></div>'+
 			'</div>'+
 			
 		'<div class="track">'+
@@ -217,14 +217,14 @@ window.playDrums = function(tempo){
 			'<div id="randomx"></div>'+
 			'</div>'+
 			
-			'<div class="seq  seq1  last"><div class="countplace" >1</div><input ID = "hatbox1" class="hatbox"  type="checkbox"  name="snarebox1" value="1" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq2 "><div class="countplace" >2</div><input ID = "hatbox2" class="hatbox"  type="checkbox"  name="snarebox2"  value="2" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq3 "><div class="countplace" >3</div><input ID = "hatbox3" class="hatbox"  type="checkbox"  name="snarebox3" value="3" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq4 "><div class="countplace" >4</div><input ID = "hatbox4" class="hatbox"  type="checkbox"  name="snarebox4"  value="4" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq5 "><div class="countplace" >5</div><input ID = "hatbox5" class="hatbox"  type="checkbox"  name="snarebox5" value="5" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq6 "><div class="countplace" >6</div><input ID = "hatbox6" class="hatbox"  type="checkbox"  name="snarebox6"  value="6" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq7 "><div class="countplace" >7</div><input ID = "hatbox7" class="hatbox"  type="checkbox"  name="snarebox7" value="7" onchange="editNow();"><div class="subdiv"></div></div>'+
-			'<div class="seq seq8 "><div class="countplace" >8</div><input ID = "hatbox8" class="hatbox" type="checkbox"  name="snarebox8"  value="8" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq  seq1  last"> <label for="hatbox1">1</label> <input ID = "hatbox1" class="hatbox"  type="checkbox"  name="snarebox1" value="1" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq2 "> <label for="hatbox2">2</label> <input ID = "hatbox2" class="hatbox"  type="checkbox"  name="snarebox2"  value="2" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq3 "> <label for="hatbox3">3</label> <input ID = "hatbox3" class="hatbox"  type="checkbox"  name="snarebox3" value="3" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq4 "> <label for="hatbox4">4</label> <input ID = "hatbox4" class="hatbox"  type="checkbox"  name="snarebox4"  value="4" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq5 "> <label for="hatbox5">5</label> <input ID = "hatbox5" class="hatbox"  type="checkbox"  name="snarebox5" value="5" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq6 "> <label for="hatbox6">6</label> <input ID = "hatbox6" class="hatbox"  type="checkbox"  name="snarebox6"  value="6" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq7 "> <label for="hatbox7">7</label> <input ID = "hatbox7" class="hatbox"  type="checkbox"  name="snarebox7" value="7" onchange="editNow();"><div class="subdiv"></div></div>'+
+			'<div class="seq seq8 "> <label for="hatbox8">8</label> <input ID = "hatbox8" class="hatbox" type="checkbox"  name="snarebox8"  value="8" onchange="editNow();"><div class="subdiv"></div></div>'+
 		'</div>'+
 		
 		'');
