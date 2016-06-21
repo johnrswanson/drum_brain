@@ -2,7 +2,7 @@
 	
 	var beatand='1';
 	var counter='0';
-	var measure='9';
+	var measure='17';
 	var reset=measure -1 ;
 	var timerId=null;
 	
@@ -74,6 +74,14 @@ window.playDrums = function(tempo){
 					$('#playhat').trigger('play');
 					$('#hat'+counter+'>.indicator').slideDown(10);
 					$('#hat'+counter+'>.indicator').slideUp(200);
+				}
+				
+				
+				if(document.getElementById('percbox'+counter).checked) {
+					$("#playperc").prop("currentTime",0);
+					$('#playperc').trigger('play');
+					$('#perc'+counter+'>.indicator').slideDown(10);
+					$('#perc'+counter+'>.indicator').slideUp(200);
 				}
 				
 			}
@@ -149,6 +157,7 @@ window.playDrums = function(tempo){
 		
 		 
 	window.setupDrums = function(){
+		var topcounter=1;
 	
 		$("#page").append(''+
 		'<div style="float: right; position: fixed; top: 0px; left: 0px" id="counter"></div>'+
@@ -158,104 +167,192 @@ window.playDrums = function(tempo){
 		//'<div id="randomx"></div>'+
 		
 		'<form  ID="formDrummer">'+
-		'tempo:<input ID = "tempo" type="range" data-show-value="true" min="75" max="300" name="tempo"  onchange="editNow(); " placeholder="Tempo"><br>'+
+		'tempo:<input ID = "tempo" type="range" data-show-value="true" min="30" max="350" name="tempo"  onchange="editNow(); " placeholder="Tempo"><br>'+
 		'<div ID="sequencer"></div>'+
-		//'<input style=" padding: 10px; " ID="saveedit" type="button" name="submit" value="Play" onclick="editNow(); ">'+
 		'</form>'); 
 		
 		$("#sequencer").append(''+
-		
-			'<div style="float: left; width: 8%;  border: solid 1px #fff; margin-right: 4px;"></div>'+
-			'<div class="topseq topseq1 last"></div>'+
-			'<div class="topseq topseq2 "></div>'+
-			'<div class="topseq topseq3 "></div>'+
-			'<div class="topseq topseq4 "></div>'+
-			'<div class="topseq topseq5 "></div>'+
-			'<div class="topseq topseq6 "></div>'+
-			'<div class="topseq topseq7 "></div>'+
-			'<div class="topseq topseq8 "></div>'+
-	
-		
-		'<div class="track">'+
-			'<div class="player">'+
-				'<audio  ID="playhat" controls><source src="./hihat2.mp3" type="audio/mpeg"></audio>'+
-			'<div id="randomx"></div>'+
-			'</div>'+
-			'<div class="institle seq last" style="float: left; width: 8%;  border: solid 1px #fff;"><img src="hihat.png" width="50px">HiHat</div>'+
-			
-			'<div  ID="hat1" class="seq  seq1  "> <label for="hatbox1">1</label> <input ID = "hatbox1" class="hatbox"  type="checkbox"  name="snarebox1" value="1" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			'<div  ID="hat2" class="seq seq2 "> <label for="hatbox2">2</label> <input ID = "hatbox2" class="hatbox"  type="checkbox"  name="snarebox2"  value="2" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div  ID="hat3" class="seq seq3 "> <label for="hatbox3">3</label> <input ID = "hatbox3" class="hatbox"  type="checkbox"  name="snarebox3" value="3" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div  ID="hat4" class="seq seq4 "> <label for="hatbox4">4</label> <input ID = "hatbox4" class="hatbox"  type="checkbox"  name="snarebox4"  value="4" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			'<div  ID="hat5" class="seq seq5 "> <label for="hatbox5">5</label> <input ID = "hatbox5" class="hatbox"  type="checkbox"  name="snarebox5" value="5" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			'<div  ID="hat6" class="seq seq6 "> <label for="hatbox6">6</label> <input ID = "hatbox6" class="hatbox"  type="checkbox"  name="snarebox6"  value="6" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			'<div  ID="hat7" class="seq seq7 "> <label for="hatbox7">7</label> <input ID = "hatbox7" class="hatbox"  type="checkbox"  name="snarebox7" value="7" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			'<div  ID="hat8" class="seq seq8 "> <label for="hatbox8">8</label> <input ID = "hatbox8" class="hatbox" type="checkbox"  name="snarebox8"  value="8" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-		'</div>'+
-
-
-
-		'<div class="track">'+
-			'<div class="player">'+
-				'<audio  ID="playsnare" controls > <source src="./snare.mp3" type="audio/mpeg"></audio>'+
-			'<div id="randomy"></div>'+
-			'</div>'+
-			'<div class="institle seq last" style="float: left; width: 8%; border: solid 1px #fff;"><img src="snare.png" width="50px"> Snare Drum</div>'+
-			
-			
-			'<div  ID="snare1" class="seq seq1  "> <label for="snarebox1">1</label> <input ID = "snarebox1"  class="snarebox" type="checkbox"  name="snarebox1" value="1" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div ID="snare2" class="seq seq2 "> <label for="snarebox2">2</label> <input ID = "snarebox2"   class="snarebox" type="checkbox"  name="snarebox2"  value="2" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div  ID="snare3" class="seq seq3 "> <label for="snarebox3">3</label> <input ID = "snarebox3"   class="snarebox" type="checkbox"  name="snarebox3" value="3" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div  ID="snare4" class="seq seq4 "> <label for="snarebox4">4</label> <input ID = "snarebox4"   class="snarebox" type="checkbox"  name="snarebox4"  value="4" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div  ID="snare5" class="seq seq5 "> <label for="snarebox5">5</label> <input ID = "snarebox5"   class="snarebox" type="checkbox"  name="snarebox5" value="5" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div  ID="snare6" class="seq seq6 "> <label for="snarebox6">6</label> <input ID = "snarebox6"   class="snarebox" type="checkbox"  name="snarebox6"  value="6" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div  ID="snare7" class="seq seq7 "> <label for="snarebox7">7</label> <input ID = "snarebox7"   class="snarebox" type="checkbox"  name="snarebox7" value="7" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div  ID="snare8" class="seq seq8 "> <label for="snarebox8">8</label> <input ID = "snarebox8"   class="snarebox" type="checkbox"  name="snarebox8"  value="8" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			'</div>'+
-
-	
-		'<div class="track">'+
-			'<div class="player">'+
-				'<audio ID="playbass" controls> <source src="./bass.mp3" type="audio/mpeg"></audio>'+
-			'<div id="randomz"></div>'+
-			'</div>'+
-			'<div class="institle seq last" style="float: left; width: 8%;  border: solid 1px #fff;"><img src="bass.png" width="50px"> Bass Drum</div>'+
-			
-			'<div ID="bass1" class="seq seq1 "><label for="bassbox1">1</label><input ID = "bassbox1" class="bassbox" type="checkbox"  name="bassbox1" value="1" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div ID="bass2"class="seq seq2 "><label for="bassbox2">2</label><input ID = "bassbox2" class="bassbox" type="checkbox"  name="bassbox2"  value="2" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div ID="bass3"class="seq seq3 "><label for="bassbox3">3</label><input ID = "bassbox3" class="bassbox" type="checkbox"  name="bassbox3" value="3" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div ID="bass4" class="seq seq4 "><label for="bassbox4">4</label><input ID = "bassbox4" class="bassbox" type="checkbox"  name="bassbox4"  value="4" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-	
-			'<div ID="bass5"   class="seq seq5 "><label for="bassbox5">5</label><input ID = "bassbox5" class="bassbox" type="checkbox"  name="bassbox5" value="5" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div ID="bass6"class="seq seq6 "><label for="bassbox6">6</label><input ID = "bassbox6" class="bassbox" type="checkbox"  name="bassbox6"  value="6" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div ID="bass7" class="seq seq7 "><label for="bassbox7">7</label><input ID = "bassbox7" class="bassbox" type="checkbox"  name="bassbox7" value="7" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-			
-			'<div ID="bass8" class="seq seq8 "><label for="bassbox8">8</label><input ID = "bassbox8" class="bassbox" type="checkbox"  name="bassbox8"  value="8" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
-		'</div>'+
-		
-		
-		
-		
-					
-				
+		'<div class="topsequencer"><div style="float: left; width: 8%;  border: solid 1px #fff; margin-right: 1px;"></div></div>'+
 		'');
 		
 		
-										 
+		
+		$("#sequencer").append(''+
+		'<div class="track track1">'+
+			'<div class="player">'+
+				'<audio  ID="playhat" controls><source src="./hihat2.mp3" type="audio/mpeg"></audio>'+
+			'</div>'+
+			'<div class="institle seq last" style="float: left; width: 8%;  border: solid 1px #fff;"><img src="hihat.png" width="50px">HiHat</div>'+
+			'</div>'+
+			'');
+
+		$("#sequencer").append(''+
+		'<div class="track track2">'+
+			'<div class="player">'+
+				'<audio  ID="playsnare" controls > <source src="./snare.mp3" type="audio/mpeg"></audio>'+
+			'</div>'+
+			'<div class="institle seq last" style="float: left; width: 8%; border: solid 1px #fff;"><img src="snare.png" width="50px"> Snare Drum</div>'+
+			'</div>'+
+			'');
+			
+		$("#sequencer").append(''+
+		'<div class="track track3">'+
+			'<div class="player">'+
+				'<audio ID="playbass" controls> <source src="./bass.mp3" type="audio/mpeg"></audio>'+
+			'</div>'+
+			'<div class="institle seq last" style="float: left; width: 8%;  border: solid 1px #fff;"><img src="bass.png" width="45px"> Bass Drum</div>'+
+			'');
+			
+			
+			$("#sequencer").append(''+
+		'<div class="track track4">'+
+			'<div class="player">'+
+				'<audio ID="playperc" controls> <source src="./hat.mp3" type="audio/mpeg"></audio>'+
+			'</div>'+
+			'<div class="institle seq last" style="float: left; width: 8%;  border: solid 1px #fff;"><img src="perc.png" width="50px"> Percussion</div>'+
+			'');
+			
+			
+			
+
+		
+		while(topcounter < measure){
+		$(".topsequencer").append(''+
+		'<div class="topseq topseq'+topcounter+'"></div>'+
+		'');
+			
+			
+			
+		$(".track1").append(''+
+		'<div  ID="hat'+topcounter+'" class="seq  seq'+topcounter+'"> <label for="hatbox'+topcounter+'"></label> <input ID = "hatbox'+topcounter+'" class="hatbox"  type="checkbox"  name="hatbox'+topcounter+'" value="'+topcounter+'" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
+		'');	
+
+
+		$(".track2").append(''+
+		'<div  ID="snare'+topcounter+'" class="seq seq'+topcounter+' "> <label for="snarebox'+topcounter+'"></label> <input ID = "snarebox'+topcounter+'"  class="snarebox" type="checkbox"  name="snarebox'+topcounter+'" value="'+topcounter+'" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
+		'');
+		
+		$(".track3").append(''+	
+		'<div ID="bass'+topcounter+'" class="seq seq'+topcounter+' "><label for="bassbox'+topcounter+'"></label><input ID = "bassbox'+topcounter+'" class="bassbox" type="checkbox"  name="bassbox'+topcounter+'" value="'+topcounter+'" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
+		'');
+
+$(".track4").append(''+	
+		'<div ID="perc'+topcounter+'" class="seq seq'+topcounter+' "><label for="percbox'+topcounter+'"></label><input ID = "percbox'+topcounter+'" class="bassbox" type="checkbox"  name="percbox'+topcounter+'" value="'+topcounter+'" onchange="editNow();"><div class="indicator"></div><div class="subdiv"></div></div>'+
+		'');
+		
+		
+		
+		if (topcounter=='8'){
+			$(".topsequencer").append(''+	
+			'<div class="bigspacer" style=""></div>'+
+			'');
+			$(".track1").append(''+	
+			'<div class="bigspacer"></div>'+
+
+			'');
+			
+			$(".track2").append(''+	
+			'<div class="bigspacer"></div>'+
+
+			'');
+			
+			$(".track3").append(''+	
+			'<div class="bigspacer"></div>'+
+
+			'');
+			
+			$(".track4").append(''+	
+			'<div class="bigspacer"></div>'+
+
+			'');
+
+		}
+		
+
+		
+
+		if ((topcounter=='4')||(topcounter=='12')){
+			$(".topsequencer").append(''+	
+			'<div class="defaultspacer"></div>'+
+			'');
+			$(".track1").append(''+	
+			'<div class="defaultspacer"></div>'+
+
+			'');
+			
+			$(".track2").append(''+	
+			'<div class="defaultspacer"></div>'+
+
+			'');
+			
+			$(".track3").append(''+	
+			'<div class="defaultspacer"></div>'+
+
+			'');
+			
+			$(".track4").append(''+	
+			'<div class="defaultspacer"></div>'+
+
+			'');
+		}
+		
+		
+		
+		if ((topcounter=='2')||(topcounter=='6')||(topcounter=='10')||(topcounter=='14')){
+			$(".topsequencer").append(''+	
+			'<div class="midspacer"></div>'+
+			'');
+			$(".track1").append(''+	
+			'<div class="midspacer"></div>'+
+
+			'');
+			
+			$(".track2").append(''+	
+			'<div class="midspacer"></div>'+
+
+			'');
+			
+			$(".track3").append(''+	
+			'<div class="midspacer"></div>'+
+
+			'');
+			
+			$(".track4").append(''+	
+			'<div class="midspacer"></div>'+
+
+			'');
+		}
+		
+		if ((topcounter=='1')||(topcounter=='3')||(topcounter=='5')||(topcounter=='7')||(topcounter=='9')||(topcounter=='11')||(topcounter=='13')||(topcounter=='15')){
+			$(".topsequencer").append(''+	
+			'<div class="smallspacer"></div>'+
+			'');
+			$(".track1").append(''+	
+			'<div class="smallspacer"></div>'+
+
+			'');
+			
+			$(".track2").append(''+	
+			'<div class="smallspacer"></div>'+
+
+			'');
+			
+			$(".track3").append(''+	
+			'<div class="smallspacer"></div>'+
+
+			'');
+			
+			$(".track4").append(''+	
+			'<div class="smallspacer"></div>'+
+
+			'');
+		}
+
+
+		
+		topcounter++;
+		}
+									 
 	}
 	
 	
