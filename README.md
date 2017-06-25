@@ -24,3 +24,4 @@ Example of midi connection on iOS :
 Use the MFmonitor app as the output destination of the drum_brain webpage loaded in the Webmidi Browser,
 and then allow the DM1 drum app to receive midi notes in from
 MFmonitor app.
+<IMG SRC='http://www.johnswanson.nyc/drummer/example.png'>
