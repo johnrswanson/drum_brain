@@ -6,6 +6,7 @@ With this code, you can feed improvised drum patterns into midi drum apps or oth
 working example can be found here http://www.johnswanson.nyc/drummer/
 
 HOW TO USE
+
 Make DRUM BEATS by marking checkboxes. 
 
 The top row of black checkboxes on each drum step is the “always hit” row and will play every time thru your loop if checked.
