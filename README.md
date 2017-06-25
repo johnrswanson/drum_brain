@@ -1,6 +1,4 @@
-DRUM_BRAIN is a drum machine that can improvise musicaly based in the concept of determining absolute yes/no vs maybe.
-
-This midi sequencer allows you to make a drum loop and THEN ALSO engages with your loop by allowing the possibility for rhythmic improvisation based on your input. 
+DRUM_BRAIN is a drum machine that can improvise musicaly based in the concept of determining absolute yes/no vs maybe. This midi sequencer allows you to make a drum loop and THEN ALSO engages with your loop by allowing the possibility for rhythmic improvisation based on your input. 
 
 
 MEANT FOR USE WITH WEBMIDI BROWSER
