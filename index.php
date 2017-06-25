@@ -10,15 +10,15 @@ DRUM_BRAIN
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<script src="jquery.js">
+<script src="/jquery.js">
 </script>
 
-<script src="webmidi.js">
+<script src="/webmidi.js">
 </script>
 
 <script src="drum_brain.js">
 </script>
-<script src="range.js">
+<script src="/range.js">
 </script>
 
 
